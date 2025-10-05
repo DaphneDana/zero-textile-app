@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
 import { useState } from "react"
+import { KentePattern } from "@/components/african-patterns"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -43,15 +44,39 @@ export default function ContactPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-background via-accent/20 to-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('/professional-african-woman-office-wear-elegant-sui.jpg')`,
+          }}
+        >
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+        </div>
+
+        {/* African Pattern Overlay */}
+        <div className="absolute inset-0 opacity-10 text-white pointer-events-none">
+          <KentePattern />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-foreground">Contact Us</h1>
-            <p className="text-lg md:text-xl text-muted-foreground text-pretty">
-              We'd love to hear from you. Get in touch with our team today.
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-2xl animate-fade-in-up">
+              Get In Touch
+            </h1>
+            <div className="w-24 h-1 bg-primary mx-auto rounded-full animate-fade-in" />
+            <p className="text-xl md:text-2xl text-white/90 text-pretty drop-shadow-lg animate-fade-in-up animation-delay-200">
+              We'd love to hear from you. Let's create something beautiful together.
             </p>
           </div>
         </div>
+
+        {/* Decorative Corner Elements */}
+        <div className="absolute top-0 left-0 w-32 h-32 border-t-4 border-l-4 border-primary/50" />
+        <div className="absolute bottom-0 right-0 w-32 h-32 border-b-4 border-r-4 border-primary/50" />
       </section>
 
       {/* Contact Info Cards */}

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { MessageCircle, Search, Tag, Package, Truck } from "lucide-react"
 import Link from "next/link"
 import { Footer } from "@/components/footer"
+import { KentePattern, AfricanGeometricPattern, TribalPattern } from "@/components/african-patterns"
 
 const services = [
   {
@@ -47,31 +48,71 @@ export default function ServicesPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-background via-accent/20 to-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('/professional-african-woman-office-wear-elegant-sui.jpg')`,
+          }}
+        >
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+        </div>
+
+        {/* African Pattern Overlay */}
+        <div className="absolute inset-0 opacity-10 text-white pointer-events-none">
+          <TribalPattern />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-foreground">Our Services</h1>
-            <p className="text-lg md:text-xl text-muted-foreground text-pretty">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-2xl animate-fade-in-up">
+              Our Services
+            </h1>
+            <div className="w-24 h-1 bg-primary mx-auto rounded-full animate-fade-in" />
+            <p className="text-xl md:text-2xl text-white/90 text-pretty drop-shadow-lg animate-fade-in-up animation-delay-200">
               End-to-end support for your fashion business
             </p>
           </div>
         </div>
+
+        {/* Decorative Corner Elements */}
+        <div className="absolute top-0 left-0 w-32 h-32 border-t-4 border-l-4 border-primary/50" />
+        <div className="absolute bottom-0 right-0 w-32 h-32 border-b-4 border-r-4 border-primary/50" />
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-card relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-[0.02] text-primary pointer-events-none">
+          <AfricanGeometricPattern />
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-6xl mx-auto space-y-8">
             {services.map((service, index) => {
               const Icon = service.icon
+              const patterns = [KentePattern, TribalPattern, AfricanGeometricPattern]
+              const Pattern = patterns[index % patterns.length]
+
               return (
                 <Card
                   key={index}
-                  className="p-8 md:p-12 hover:shadow-xl transition-all duration-300 hover:border-primary/50"
+                  className="p-8 md:p-12 hover:shadow-2xl transition-all duration-300 hover:border-primary/30 border-2 border-transparent bg-gradient-to-br from-card to-card/50 relative overflow-hidden group"
                 >
-                  <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+                  {/* Pattern Overlay */}
+                  <div className="absolute top-0 right-0 w-48 h-48 opacity-[0.03] text-primary pointer-events-none">
+                    <Pattern />
+                  </div>
+
+                  {/* Decorative Corner */}
+                  <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-primary/20" />
+
+                  <div className="flex flex-col md:flex-row gap-6 md:gap-8 relative z-10">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                         <Icon className="h-8 w-8 text-primary" />
                       </div>
                     </div>
@@ -80,7 +121,7 @@ export default function ServicesPage() {
                       <p className="text-lg text-foreground leading-relaxed">{service.description}</p>
                       {service.cta && (
                         <div className="pt-2">
-                          <Button asChild className="bg-primary hover:bg-primary/90">
+                          <Button asChild className="bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all hover:scale-105">
                             <Link href={service.ctaLink || "/contact"}>
                               {service.cta}
                               <MessageCircle className="ml-2 h-4 w-4" />
@@ -98,22 +139,27 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold">Ready to Get Started?</h2>
+      <section className="py-12 bg-primary text-primary-foreground relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-[0.05] text-white pointer-events-none">
+          <KentePattern />
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold">Ready to Get Started?</h2>
             <p className="text-lg md:text-xl opacity-90">
               Let's discuss how we can help bring your fashion vision to life with our comprehensive services.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <Button asChild size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90 shadow-xl hover:shadow-2xl transition-all hover:scale-105">
                 <Link href="/contact">Contact Us Today</Link>
               </Button>
               <Button
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white/10 bg-transparent"
+                className="border-2 border-white text-white hover:bg-white hover:text-primary bg-transparent transition-all hover:scale-105"
               >
                 <Link href="/products">View Our Products</Link>
               </Button>
