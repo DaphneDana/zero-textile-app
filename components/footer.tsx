@@ -49,15 +49,25 @@ export function Footer() {
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span>Lira, Northern Uganda</span>
+                <span>Lira Industrial Zone, Lira City, Uganda</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 text-primary" />
-                <span>+256 XXX XXX XXX</span>
+                <a href="tel:+256774672629" className="hover:text-primary transition-colors">
+                  +256 774 672 629
+                </a>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Phone className="h-4 w-4 text-primary" />
+                <a href="tel:+256700865980" className="hover:text-primary transition-colors">
+                  +256 700 865 980
+                </a>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 text-primary" />
-                <span>info@zeroetextile.com</span>
+                <a href="mailto:info@zeroetextile.co.ug" className="hover:text-primary transition-colors">
+                  info@zeroetextile.co.ug
+                </a>
               </div>
             </div>
           </div>
