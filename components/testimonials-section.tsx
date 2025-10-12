@@ -11,25 +11,25 @@ const testimonials = [
     name: "Mrs. Margret Ojara",
     location: "Gulu",
     rating: 5,
-    text: "I've been working with ZTC for the last couple of months and they are so easy to work with, communicate with, and understand great fashions! Other companies I've tried were somehow complicated but ZTC makes things reality so easily and quick and I am quite impressed.",
+    text: "I've been working with ZTC for the last couple of months and they are so easy to work with, communicate with, and understand great fashions! Other companies I've tried to work with were somehow complicated but ZTC makes things reality so easily and quick and I am quite impressed.",
   },
   {
     name: "Ragina Harriet Achar",
     location: "Apac",
     rating: 5,
-    text: "I've been working with ZTC for the last five months and I don't think I will ever leave them! They have the best services and high-quality female clothes. I made an order and they reply straight away and they always give me exactly what I ask for. Thank you ZTC!",
+    text: "I've been working with ZTC for the last five months and I don't thing I will ever leave them! I tried so many manufacturers but they didn't satisfy me like ZTC did. They have the best services and high-quality female clothes. I made an order and they reply straight away and they always give me exactly what I ask for. Thank you ZTC",
   },
   {
     name: "Catherine Abeja",
     location: "Oyam",
     rating: 5,
-    text: "ZTC is simply amazing cloth manufacturer, and by far the best when I compare with other small manufacturers. They are very supportive and great to work with. Very quick to respond to enquiries and orders. I would highly recommend ZTC if you're thinking of fashion.",
+    text: "I can say ZTC is simply amazing cloth manufacturer, and by far the best when I compare with other small manufacturers. Though they are new, they have been so supportive and great to work with. They are wonderful, very understanding, and amazing. They are very quick to respond to enquiries and orders. I would highly recommend ZTC if you're thinking of fashion",
   },
   {
     name: "Joanita Komagum",
     location: "Kitgum",
     rating: 5,
-    text: "When I learnt of a new cloth manufacturing company in Lira, I was amazed - they were our queens doing the magic! Quality of garment and clothing is 10/10 rating and their service is great. I will continue to do business with them for eternity!",
+    text: "When I learnt of a new cloth manufacturing company in Lira, I wondered who they could be, only to my amazement, they were our queens doing the magic! I decided to try their products, and guess what, they were simply amazing. It's real fashion with ZTC. Quality of garment and clothing is 10/10 rating and their service is great just fitting every need of the customers. I will continue to do business with them for eternity!",
   },
 ]
 
@@ -120,10 +120,23 @@ export function TestimonialsSection() {
               Our Customers Greatly Love Us
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
-              You don't have to build your fashion brand on your own. Team up with a crew of manufacturing experts with
-              a proven track record.
-            </p>
+            <div className="max-w-3xl mx-auto space-y-4">
+              <p className="text-lg text-muted-foreground text-pretty">
+                You don't have to build your fashion brand on your own. Team up with a crew of manufacturing experts
+                with a proven track record.
+              </p>
+              <p className="text-lg text-muted-foreground text-pretty">
+                With our strong manufacturing experts with a proven track record, we know what it takes to build a
+                profitable fashion brand and we go the extra mile to make sure you achieve your goals.
+              </p>
+            </div>
+          </div>
+
+          {/* Sample Testimonies Heading */}
+          <div className="text-center">
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground">
+              Sample testimonies from our customers!
+            </h3>
           </div>
 
           {/* Testimonials Carousel */}

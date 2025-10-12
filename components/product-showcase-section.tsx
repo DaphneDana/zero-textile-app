@@ -7,22 +7,22 @@ const products = [
   {
     title: "Office Wear",
     description: "Skirts, blouses, and suits for working women",
-    image: "/professional-african-woman-office-wear-elegant-sui.jpg",
+    image: "/images/lady4.jpg",
   },
   {
     title: "Casual Everyday Wear",
     description: "Dresses, tops, and jeans-style outfits",
-    image: "/casual-african-fashion-dress-colorful-modern.jpg",
+    image: "/images/lady1.jpg",
   },
   {
     title: "Occasion & Party Wear",
     description: "Stylish dresses for weddings and events",
-    image: "/elegant-african-party-dress-wedding-fashion.jpg",
+    image: "/images/lady3.jpg",
   },
   {
     title: "Traditional Wear",
     description: "Kitenge or gomesi-inspired trendy outfits",
-    image: "/modern-african-traditional-kitenge-fashion-colorfu.jpg",
+    image: "/images/skirt.jpg",
   },
 ]
 

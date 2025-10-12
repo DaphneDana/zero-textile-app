@@ -40,15 +40,15 @@ function StatCard({ icon: Icon, value, label, suffix = "", shouldAnimate }: any)
   const displayValue = typeof value === 'number' ? count : count + suffix
 
   return (
-    <Card className="p-4 space-y-3 hover:shadow-xl hover:scale-105 transition-all duration-300 group border-2 border-transparent hover:border-primary/20 bg-gradient-to-br from-card to-card/50">
+    <Card className="p-4 space-y-3 hover:shadow-xl hover:scale-105 transition-all duration-300 group border-2 border-transparent hover:border-primary/20 bg-primary/70">
       <div className="flex justify-center">
-        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors group-hover:scale-110 duration-300">
-          <Icon className="h-6 w-6 text-primary" />
+        <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors group-hover:scale-110 duration-300">
+          <Icon className="h-6 w-6 text-white" />
         </div>
       </div>
       <div className="space-y-1 text-center">
-        <div className="text-2xl font-bold text-foreground">{displayValue}</div>
-        <div className="text-xs text-muted-foreground font-medium">{label}</div>
+        <div className="text-2xl font-bold text-white">{displayValue}</div>
+        <div className="text-xs text-white/90 font-medium">{label}</div>
       </div>
     </Card>
   )

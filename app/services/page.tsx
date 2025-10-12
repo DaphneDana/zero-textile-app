@@ -9,36 +9,40 @@ import { KentePattern, AfricanGeometricPattern, TribalPattern } from "@/componen
 
 const services = [
   {
+    id: "consultation",
     icon: MessageCircle,
     title: "Free Consultation",
     description:
-      "We offer free consultation and tell you what we know about production, costs, lead-time, delivery, etc. With this knowledge, you can know better if you are ready to order products, how much money you need, and what you need to do next.",
-    cta: "Schedule A Meeting",
+      "We offer free consultation and tell you what we know about the production, costs, lead-time, delivery, etc. With the knowledge, you can know better if you are ready to order the products, how much money you need, what you need to do next.",
+    cta: "Schedule A Meeting with our team now!",
     ctaLink: "/contact",
   },
   {
+    id: "sourcing",
     icon: Search,
     title: "Sourcing",
     description:
-      "We have a sourcing team to source fabrics, buttons, zippers, and trims for your special-order production. They use their professionalism to make things easier for you. We recommend the latest or most popular fabrics to our customers so they can create something suitable for their brands and uniforms.",
+      "We have a sourcing team to source the fabrics, buttons, zippers, and trims for your special-order production. They use their professionalism to make things easier for you. We will recommend the latest or most popular fabrics to our customers so they can create something suitable for their brands- uniforms etc.",
   },
   {
+    id: "labels",
     icon: Tag,
     title: "Labels & Tags",
     description:
-      "We can provide custom labels and tags so you can further customize your own products and create a unique brand identity.",
+      "We can provide custom labels and tags so you can further customize your own products.",
   },
   {
+    id: "packaging",
     icon: Package,
     title: "Packaging",
-    description:
-      "We provide special packaging for your products, ensuring they arrive in perfect condition and make a great impression.",
+    description: "We provide special packaging for your products",
   },
   {
+    id: "delivery",
     icon: Truck,
     title: "Delivery",
     description:
-      "We use various delivery methods using best delivery firms such as Posta Uganda, DHL, FedEx and other Courier services operated by best bus companies and transporters in Uganda for large quantities.",
+      "We use various delivery methods using best delivery firms such as Posta Uganda, DHL, FedEx and other Courier services operated best bus companies and transporters in Uganda for large quantities.",
   },
 ]
 
@@ -100,6 +104,7 @@ export default function ServicesPage() {
               return (
                 <Card
                   key={index}
+                  id={service.id}
                   className="p-8 md:p-12 hover:shadow-2xl transition-all duration-300 hover:border-primary/30 border-2 border-transparent bg-gradient-to-br from-card to-card/50 relative overflow-hidden group"
                 >
                   {/* Pattern Overlay */}

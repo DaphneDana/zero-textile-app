@@ -11,8 +11,8 @@ import Autoplay from "embla-carousel-autoplay"
 const heroSlides = [
   {
     image: "/elegant-african-woman-in-beautiful-colorful-tradit.jpg",
-    title: "Uganda's Largest Professional",
-    highlight: "Female-Based Clothing Manufacturer",
+    title: "Northern Uganda's Largest Professional",
+    highlight: "Female-Based Garment Manufacturer",
     subtitle: "Meeting the needs of fashion lovers who speak through style",
   },
   {
@@ -26,6 +26,18 @@ const heroSlides = [
     title: "Occasion & Party Wear",
     highlight: "Make Every Moment Unforgettable",
     subtitle: "Stunning designs for weddings, celebrations, and special events",
+  },
+  {
+    image: "/elegant-african-woman-in-beautiful-colorful-tradit.jpg",
+    title: "Traditional Wear",
+    highlight: "With Modern Twist",
+    subtitle: "Celebrating African heritage with contemporary elegance",
+  },
+  {
+    image: "/elegant-african-woman-in-beautiful-colorful-tradit.jpg",
+    title: "Casual Everyday Wear",
+    highlight: "Comfort Meets Style",
+    subtitle: "Effortless fashion for your daily adventures",
   },
 ]
 
@@ -85,7 +97,7 @@ export function HeroSection() {
                       <div className="space-y-4 animate-fade-in-up">
                         <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight text-balance drop-shadow-2xl">
                           {slide.title}{" "}
-                          <span className="inline-block mt-2 text-primary bg-black/30 px-6 py-3 rounded-lg backdrop-blur-sm">
+                          <span className="inline-block mt-2 text-white bg-primary/70 px-6 py-3 rounded-lg backdrop-blur-sm">
                             {slide.highlight}
                           </span>
                         </h1>

@@ -16,84 +16,47 @@ import Autoplay from "embla-carousel-autoplay"
 const clothingProducts = [
   {
     name: "Body Suits",
-    images: [
-      "/elegant-african-woman-in-beautiful-colorful-tradit.jpg",
-      "/modern-african-traditional-kitenge-fashion-colorfu.jpg",
-      "/casual-african-fashion-dress-colorful-modern.jpg"
-    ]
+    images: ["/images/lady.jpg", "/images/lady1.jpg", "/images/lady3.jpg"]
   },
   {
     name: "Blouses",
-    images: [
-      "/professional-african-woman-office-wear-elegant-sui.jpg",
-      "/casual-african-fashion-dress-colorful-modern.jpg",
-      "/elegant-african-woman-in-beautiful-colorful-tradit.jpg"
-    ]
+    images: ["/images/lady4.jpg", "/images/skirt.jpg", "/images/lady.jpg"]
   },
   {
     name: "Dresses",
-    images: [
-      "/casual-african-fashion-dress-colorful-modern.jpg",
-      "/elegant-african-party-dress-wedding-fashion.jpg",
-      "/modern-african-traditional-kitenge-fashion-colorfu.jpg"
-    ]
+    images: ["/images/lady1.jpg", "/images/lady3.jpg", "/images/lady4.jpg"]
   },
   {
     name: "Skirts",
-    images: [
-      "/elegant-african-party-dress-wedding-fashion.jpg",
-      "/casual-african-fashion-dress-colorful-modern.jpg",
-      "/professional-african-woman-office-wear-elegant-sui.jpg"
-    ]
+    images: ["/images/skirt.jpg", "/images/lady.jpg", "/images/lady1.jpg"]
   },
   {
     name: "Knickers",
-    images: [
-      "/modern-african-traditional-kitenge-fashion-colorfu.jpg",
-      "/elegant-african-woman-in-beautiful-colorful-tradit.jpg"
-    ]
+    images: ["/images/lady3.jpg", "/images/lady4.jpg"]
   },
   {
     name: "Long Shirts",
-    images: [
-      "/professional-african-woman-office-wear-elegant-sui.jpg",
-      "/casual-african-fashion-dress-colorful-modern.jpg"
-    ]
+    images: ["/images/lady.jpg", "/images/lady1.jpg"]
   },
   {
     name: "Trousers",
-    images: [
-      "/casual-african-fashion-dress-colorful-modern.jpg",
-      "/professional-african-woman-office-wear-elegant-sui.jpg"
-    ]
+    images: ["/images/lady4.jpg", "/images/skirt.jpg"]
   },
   {
     name: "Shorts",
-    images: [
-      "/elegant-african-party-dress-wedding-fashion.jpg",
-      "/casual-african-fashion-dress-colorful-modern.jpg"
-    ]
+    images: ["/images/lady3.jpg", "/images/lady.jpg"]
   },
   {
     name: "Lounge Wear",
-    images: [
-      "/elegant-african-woman-in-beautiful-colorful-tradit.jpg",
-      "/modern-african-traditional-kitenge-fashion-colorfu.jpg"
-    ]
+    images: ["/images/lady1.jpg", "/images/lady4.jpg"]
   },
   {
     name: "T-shirts",
-    images: [
-      "/modern-african-traditional-kitenge-fashion-colorfu.jpg",
-      "/casual-african-fashion-dress-colorful-modern.jpg"
-    ]
+    images: ["/images/skirt.jpg", "/images/lady3.jpg"]
   },
   {
     name: "Pyjamas",
-    images: [
-      "/casual-african-fashion-dress-colorful-modern.jpg",
-      "/elegant-african-woman-in-beautiful-colorful-tradit.jpg"
-    ]
+    images: ["/images/lady.jpg", "/images/lady1.jpg"]
   },
 ]
 
@@ -154,8 +117,84 @@ export default function ProductsPage() {
         <div className="absolute bottom-0 right-0 w-32 h-32 border-b-4 border-r-4 border-primary/50" />
       </section>
 
+      {/* Products Introduction */}
+      <section className="py-20 bg-background relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-[0.02] text-primary pointer-events-none">
+          <TribalPattern />
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <Card className="p-8 md:p-12 border-2 border-transparent hover:border-primary/30 transition-all bg-gradient-to-br from-card to-card/50 relative overflow-hidden">
+              {/* Pattern Overlay */}
+              <div className="absolute top-0 right-0 w-64 h-64 opacity-[0.03] text-primary pointer-events-none">
+                <KentePattern />
+              </div>
+
+              <div className="relative z-10 space-y-6">
+                <p className="text-xl md:text-2xl text-center font-semibold italic text-foreground leading-relaxed">
+                  ZTC's products are, "Riotously patterned, colorful, densely and unassailably fabulous."
+                </p>
+
+                <div className="space-y-4">
+                  <h3 className="font-serif text-2xl font-bold text-foreground text-center">
+                    Our clothes are categorized into:
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="flex items-start gap-3 p-4 bg-accent/30 rounded-lg">
+                      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                        <span className="text-primary font-bold">1</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-1">Office Wear</h4>
+                        <p className="text-sm text-muted-foreground">
+                          Skirts, blouses, and suits for working women.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3 p-4 bg-accent/30 rounded-lg">
+                      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                        <span className="text-primary font-bold">2</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-1">Casual Everyday Wear</h4>
+                        <p className="text-sm text-muted-foreground">Dresses, tops, and jeans-style outfits.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3 p-4 bg-accent/30 rounded-lg">
+                      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                        <span className="text-primary font-bold">3</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-1">Occasion & Party Wear</h4>
+                        <p className="text-sm text-muted-foreground">Stylish dresses for weddings and events.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3 p-4 bg-accent/30 rounded-lg">
+                      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                        <span className="text-primary font-bold">4</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-1">Traditional Wear with a Modern Twist</h4>
+                        <p className="text-sm text-muted-foreground">
+                          Kitenge or gomesi-inspired outfits that look trendy
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Clothing Section */}
-      <section className="py-20 bg-card relative overflow-hidden">
+      <section id="clothing" className="py-20 bg-card relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.02] text-primary pointer-events-none">
           <AfricanGeometricPattern />
@@ -173,6 +212,17 @@ export default function ProductsPage() {
               <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
               <p className="text-lg text-muted-foreground">High-quality female apparel for every occasion</p>
             </div>
+
+            {/* Clothing Description */}
+            <Card className="p-6 md:p-8 bg-accent/30 border-2 border-transparent">
+              <p className="text-lg text-foreground leading-relaxed text-center">
+                Types of clothing we manufacture include, Body Suits, Blouses, Dresses, Skirts, Knickers, long shirts,
+                Trousers, Shorts, lounge wear, T-shirts, Pyjamas, all in different sizes (Small, Medium, Large, 2XXL
+                etc) from different materials (Cotton, Denier, Polyester, Polymer). Other special work including making
+                on order school uniforms, medical uniforms, Engineering and technical work uniforms, and private
+                security uniforms.
+              </p>
+            </Card>
 
             {/* Product Accordion */}
             <div className="space-y-4">
@@ -267,12 +317,20 @@ export default function ProductsPage() {
                 ))}
               </div>
             </Card>
+
+            {/* ZTC Aim Statement */}
+            <Card className="p-8 bg-gradient-to-br from-primary/5 to-card border-2 border-primary/20">
+              <p className="text-lg md:text-xl text-foreground leading-relaxed text-center italic">
+                ZTC aim to provide modern African outfits to globally recognized stores and Fashion Houses who retail
+                to customers who are trendy, whilst keeping a strong sense of Africa tradition.
+              </p>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Printing Section */}
-      <section className="py-20 bg-background relative overflow-hidden">
+      <section id="printing" className="py-20 bg-background relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.02] text-primary pointer-events-none">
           <TribalPattern />
@@ -320,7 +378,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Brand Labels & Bags */}
-      <section className="py-20 bg-gradient-to-br from-accent/30 via-accent/10 to-accent/30 relative overflow-hidden">
+      <section id="branding" className="py-20 bg-gradient-to-br from-accent/30 via-accent/10 to-accent/30 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.02] text-primary pointer-events-none">
           <KentePattern />
@@ -340,8 +398,8 @@ export default function ProductsPage() {
               </h2>
               <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                We offer customizable brand labels, hang tags, and bags to help elevate brand identity and ensure
-                products stand out with a professional and personalized touch.
+                We offer customizable brand labels, hang tags, and bags to help elevate our brand identity and ensure
+                our products stand out with a professional and personalized touch.
               </p>
             </div>
 
@@ -361,40 +419,22 @@ export default function ProductsPage() {
               <CarouselContent className="-ml-4">
                 {[
                   {
-                    title: "Brand Labels",
-                    description: "Custom woven and printed labels",
-                    image: "/elegant-african-woman-in-beautiful-colorful-tradit.jpg",
-                    pattern: AfricanGeometricPattern
-                  },
-                  {
-                    title: "Hangtags",
-                    description: "Professional custom hangtags",
-                    image: "/professional-african-woman-office-wear-elegant-sui.jpg",
-                    pattern: TribalPattern
-                  },
-                  {
                     title: "Branded Bags",
                     description: "Custom packaging solutions",
-                    image: "/casual-african-fashion-dress-colorful-modern.jpg",
+                    image: "/images/bag.jpg",
                     pattern: KentePattern
-                  },
-                  {
-                    title: "Woven Labels",
-                    description: "High-quality woven brand labels",
-                    image: "/modern-african-traditional-kitenge-fashion-colorfu.jpg",
-                    pattern: AfricanGeometricPattern
-                  },
-                  {
-                    title: "Printed Tags",
-                    description: "Vibrant printed hangtags",
-                    image: "/elegant-african-party-dress-wedding-fashion.jpg",
-                    pattern: TribalPattern
                   },
                   {
                     title: "Shopping Bags",
                     description: "Custom branded shopping bags",
-                    image: "/elegant-african-woman-in-beautiful-colorful-tradit.jpg",
-                    pattern: KentePattern
+                    image: "/images/bag1.jpg",
+                    pattern: AfricanGeometricPattern
+                  },
+                  {
+                    title: "Brand Labels & Tags",
+                    description: "Custom labels and hangtags",
+                    image: "/images/card.jpg",
+                    pattern: TribalPattern
                   },
                 ].map((item, index) => {
                   const Pattern = item.pattern
@@ -433,7 +473,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Embroidery Section */}
-      <section className="py-20 bg-card relative overflow-hidden">
+      <section id="embroidery" className="py-20 bg-card relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.02] text-primary pointer-events-none">
           <AfricanGeometricPattern />
@@ -471,8 +511,7 @@ export default function ProductsPage() {
                 <div className="p-8 space-y-4">
                   <h3 className="font-serif text-2xl font-bold text-foreground">Needlework</h3>
                   <p className="text-foreground leading-relaxed">
-                    We can embroider your logo or brand slogan on clothing, adding a professional and personalized touch
-                    to your garments.
+                    We can embroider your logo or brand slogan on clothing.
                   </p>
                 </div>
               </Card>
@@ -481,7 +520,7 @@ export default function ProductsPage() {
               <Card className="overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary/20 bg-gradient-to-br from-card to-card/50">
                 <div className="relative h-64 overflow-hidden group">
                   <img
-                    src="/elegant-african-party-dress-wedding-fashion.jpg"
+                    src="/images/embroid.jpg"
                     alt="Towel embroidery"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
@@ -496,7 +535,7 @@ export default function ProductsPage() {
                 <div className="p-8 space-y-4">
                   <h3 className="font-serif text-2xl font-bold text-foreground">Towel Embroidery</h3>
                   <p className="text-foreground leading-relaxed">
-                    Beautiful towel embroidery adds personality to your garments and creates unique, memorable pieces.
+                    Beautiful towel embroidery adds personality to your garments.
                   </p>
                 </div>
               </Card>

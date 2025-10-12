@@ -8,9 +8,8 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Lightbulb, GraduationCap, Briefcase, Handshake, Building2, TrendingUp } from "lucide-react"
+import { GraduationCap, Briefcase } from "lucide-react"
 import { useState } from "react"
 import { Footer } from "@/components/footer"
 import { KentePattern, AfricanGeometricPattern, TribalPattern } from "@/components/african-patterns"
@@ -20,29 +19,66 @@ export default function CareersPage() {
     fullName: "",
     institution: "",
     trainingProgram: "",
+    courseOfStudy: "",
+    yearOfStudy: "",
     sex: "",
     email: "",
     phone: "",
-    message: "",
+    internshipLetter: null as File | null,
   })
 
   const handleInternshipSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+
+    // Validate file size
+    if (internshipFormData.internshipLetter) {
+      const fileSizeKB = internshipFormData.internshipLetter.size / 1024
+      if (fileSizeKB > 500) {
+        alert("File size must be less than 500KB. Please upload a smaller file.")
+        return
+      }
+    }
+
     console.log("Internship form submitted:", internshipFormData)
     alert("Thank you for your internship application! We will review it and get back to you soon.")
     setInternshipFormData({
       fullName: "",
       institution: "",
       trainingProgram: "",
+      courseOfStudy: "",
+      yearOfStudy: "",
       sex: "",
       email: "",
       phone: "",
-      message: "",
+      internshipLetter: null,
     })
+    // Reset file input
+    const fileInput = document.getElementById("internshipLetter") as HTMLInputElement
+    if (fileInput) fileInput.value = ""
   }
 
   const handleInternshipChange = (field: string, value: string) => {
     setInternshipFormData((prev) => ({ ...prev, [field]: value }))
+  }
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null
+    if (file) {
+      // Validate file type
+      if (file.type !== "application/pdf") {
+        alert("Only PDF files are accepted.")
+        e.target.value = ""
+        return
+      }
+      // Validate file size (500KB)
+      const fileSizeKB = file.size / 1024
+      if (fileSizeKB > 500) {
+        alert("File size must be less than 500KB.")
+        e.target.value = ""
+        return
+      }
+      setInternshipFormData((prev) => ({ ...prev, internshipLetter: file }))
+    }
   }
 
   return (
@@ -85,70 +121,8 @@ export default function CareersPage() {
         <div className="absolute bottom-0 right-0 w-32 h-32 border-b-4 border-r-4 border-primary/50" />
       </section>
 
-      {/* Business Startups Section */}
-      <section className="py-20 bg-background relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.02] text-primary pointer-events-none">
-          <AfricanGeometricPattern />
-        </div>
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <Card className="p-8 md:p-12 hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-primary/30 bg-gradient-to-br from-card to-card/50 relative overflow-hidden group">
-              {/* Pattern Overlay */}
-              <div className="absolute top-0 right-0 w-64 h-64 opacity-[0.03] text-primary pointer-events-none">
-                <TribalPattern />
-              </div>
-
-              {/* Decorative Corner */}
-              <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-primary/20" />
-
-              <div className="relative z-10 space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Lightbulb className="h-8 w-8 text-primary" />
-                  </div>
-                  <div>
-                    <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">Business Startups</h2>
-                    <div className="w-20 h-1 bg-primary mt-2 rounded-full" />
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <h3 className="font-serif text-2xl font-bold text-foreground">
-                    We'd Love To Help You Start Your Cloth Business!
-                  </h3>
-                  <p className="text-lg text-foreground leading-relaxed">
-                    Interested in starting your own cloth business, creating your own brand, or developing uniforms for
-                    your schools or companies? We provide comprehensive support to help you establish and grow your
-                    fashion venture.
-                  </p>
-                  <p className="text-lg text-foreground leading-relaxed">
-                    Our team offers expert guidance on production, sourcing, branding, and market entry strategies. Let
-                    us help you turn your fashion business dreams into reality.
-                  </p>
-                </div>
-
-                <div className="pt-4">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all hover:scale-105"
-                  >
-                    <a href="/contact">
-                      Get Started with Your Business
-                      <Building2 className="ml-2 h-5 w-5" />
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Internship Section */}
-      <section className="py-20 bg-card relative overflow-hidden">
+      <section id="internship" className="py-20 bg-card relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.02] text-primary pointer-events-none">
           <KentePattern />
@@ -187,43 +161,77 @@ export default function CareersPage() {
                   />
                 </div>
 
+                <div className="space-y-2">
+                  <Label htmlFor="institution">Institution *</Label>
+                  <Input
+                    id="institution"
+                    placeholder="Your school/university"
+                    value={internshipFormData.institution}
+                    onChange={(e) => handleInternshipChange("institution", e.target.value)}
+                    required
+                  />
+                </div>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="institution">Institution *</Label>
-                    <Input
-                      id="institution"
-                      placeholder="Your school/university"
-                      value={internshipFormData.institution}
-                      onChange={(e) => handleInternshipChange("institution", e.target.value)}
-                      required
-                    />
+                    <Label htmlFor="trainingProgram">Training Program *</Label>
+                    <Select
+                      value={internshipFormData.trainingProgram}
+                      onValueChange={(value) => handleInternshipChange("trainingProgram", value)}
+                    >
+                      <SelectTrigger id="trainingProgram">
+                        <SelectValue placeholder="Select training program" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="tailoring">Tailoring</SelectItem>
+                        <SelectItem value="embroidery">Embroidery</SelectItem>
+                        <SelectItem value="tshirt-printing">T-shirt Printing</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="trainingProgram">Training Program *</Label>
+                    <Label htmlFor="courseOfStudy">Course of Study *</Label>
                     <Input
-                      id="trainingProgram"
+                      id="courseOfStudy"
                       placeholder="e.g., Fashion Design, Textile Engineering"
-                      value={internshipFormData.trainingProgram}
-                      onChange={(e) => handleInternshipChange("trainingProgram", e.target.value)}
+                      value={internshipFormData.courseOfStudy}
+                      onChange={(e) => handleInternshipChange("courseOfStudy", e.target.value)}
                       required
                     />
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="sex">Sex *</Label>
-                  <Select value={internshipFormData.sex} onValueChange={(value) => handleInternshipChange("sex", value)}>
-                    <SelectTrigger id="sex">
-                      <SelectValue placeholder="Select your sex" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="male">Male</SelectItem>
-                      <SelectItem value="female">Female</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                      <SelectItem value="prefer-not-to-say">Prefer not to say</SelectItem>
-                    </SelectContent>
-                  </Select>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="yearOfStudy">Year of Study *</Label>
+                    <Select
+                      value={internshipFormData.yearOfStudy}
+                      onValueChange={(value) => handleInternshipChange("yearOfStudy", value)}
+                    >
+                      <SelectTrigger id="yearOfStudy">
+                        <SelectValue placeholder="Select year of study" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="year-1">Year 1</SelectItem>
+                        <SelectItem value="year-2">Year 2</SelectItem>
+                        <SelectItem value="year-3">Year 3</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="sex">Sex *</Label>
+                    <Select value={internshipFormData.sex} onValueChange={(value) => handleInternshipChange("sex", value)}>
+                      <SelectTrigger id="sex">
+                        <SelectValue placeholder="Select your sex" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="male">Male</SelectItem>
+                        <SelectItem value="female">Female</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -253,15 +261,23 @@ export default function CareersPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Why do you want to intern with us? *</Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Tell us about your goals and what you hope to learn..."
-                    rows={5}
-                    value={internshipFormData.message}
-                    onChange={(e) => handleInternshipChange("message", e.target.value)}
+                  <Label htmlFor="internshipLetter">
+                    Attach institution internship letter (Only PDF files accepted) Less than 500kb. *
+                  </Label>
+                  <Input
+                    id="internshipLetter"
+                    type="file"
+                    accept=".pdf"
+                    onChange={handleFileChange}
                     required
+                    className="cursor-pointer"
                   />
+                  {internshipFormData.internshipLetter && (
+                    <p className="text-sm text-muted-foreground">
+                      Selected: {internshipFormData.internshipLetter.name} (
+                      {(internshipFormData.internshipLetter.size / 1024).toFixed(2)} KB)
+                    </p>
+                  )}
                 </div>
 
                 <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90">
@@ -274,7 +290,7 @@ export default function CareersPage() {
       </section>
 
       {/* Job Applications Section */}
-      <section className="py-20 bg-background relative overflow-hidden">
+      <section id="job-applications" className="py-20 bg-background relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.02] text-primary pointer-events-none">
           <TribalPattern />
@@ -304,13 +320,12 @@ export default function CareersPage() {
 
                 <div className="space-y-4">
                   <p className="text-lg text-foreground leading-relaxed">
-                    We appreciate your interest in joining the Zeroe Textile Co. team! Currently, we only accept online
-                    job applications when positions are officially advertised.
+                    Apply for a job. (Please note, we accept online application only when a job advert has been placed
+                    on our website or any public domain).
                   </p>
                   <p className="text-lg text-foreground leading-relaxed">
-                    Please check our website regularly or follow our social media channels to stay updated on new job
-                    openings. When a position matches your skills and experience, you'll be able to apply directly
-                    through our online application system.
+                    Please follow guidelines that are provided on the job advert on how and where to submit your
+                    application.
                   </p>
                 </div>
 
@@ -337,97 +352,6 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Collaboration and Partnership Section */}
-      <section className="py-20 bg-card relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.02] text-primary pointer-events-none">
-          <AfricanGeometricPattern />
-        </div>
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <Card className="p-8 md:p-12 hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-primary/30 bg-gradient-to-br from-primary/5 to-card relative overflow-hidden group">
-              {/* Pattern Overlay */}
-              <div className="absolute bottom-0 right-0 w-72 h-72 opacity-[0.05] text-primary pointer-events-none">
-                <TribalPattern />
-              </div>
-
-              {/* Decorative Corners */}
-              <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-primary/20" />
-              <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-primary/20" />
-
-              <div className="relative z-10 space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Handshake className="h-8 w-8 text-primary" />
-                  </div>
-                  <div>
-                    <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
-                      Collaboration & Partnership
-                    </h2>
-                    <div className="w-20 h-1 bg-primary mt-2 rounded-full" />
-                  </div>
-                </div>
-
-                <div className="space-y-6">
-                  <p className="text-lg text-foreground leading-relaxed">
-                    We are actively seeking strategic partnerships and investment opportunities to expand our impact in
-                    the sustainable fashion industry. As a female-led company committed to empowering women and
-                    promoting eco-friendly practices, we offer unique collaboration opportunities.
-                  </p>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                          <TrendingUp className="h-5 w-5 text-primary" />
-                        </div>
-                        <h3 className="font-serif text-xl font-bold text-foreground">Investment Opportunities</h3>
-                      </div>
-                      <p className="text-foreground leading-relaxed pl-13">
-                        Partner with us to scale our operations, expand our product lines, and reach new markets across
-                        East Africa.
-                      </p>
-                    </div>
-
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                          <Handshake className="h-5 w-5 text-primary" />
-                        </div>
-                        <h3 className="font-serif text-xl font-bold text-foreground">Strategic Partnerships</h3>
-                      </div>
-                      <p className="text-foreground leading-relaxed pl-13">
-                        Collaborate with us on sustainable fashion initiatives, supply chain innovation, and community
-                        empowerment programs.
-                      </p>
-                    </div>
-                  </div>
-
-                  <p className="text-lg text-foreground leading-relaxed">
-                    Whether you're an investor, fashion brand, social enterprise, or organization aligned with our
-                    values, we welcome the opportunity to explore how we can work together to create positive change in
-                    the fashion industry.
-                  </p>
-                </div>
-
-                <div className="pt-4">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all hover:scale-105"
-                  >
-                    <a href="/contact">
-                      Discuss Partnership Opportunities
-                      <Handshake className="ml-2 h-5 w-5" />
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-12 bg-primary text-primary-foreground relative overflow-hidden">

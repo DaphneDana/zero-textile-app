@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { MapPin, Phone, Mail } from "lucide-react"
 import { useState } from "react"
 import { KentePattern } from "@/components/african-patterns"
 
@@ -69,7 +69,8 @@ export default function ContactPage() {
             </h1>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full animate-fade-in" />
             <p className="text-xl md:text-2xl text-white/90 text-pretty drop-shadow-lg animate-fade-in-up animation-delay-200">
-              We'd love to hear from you. Let's create something beautiful together.
+              Thanks for exploring our website. For more insights or desire to collaborate with us, feel free to reach
+              out. Let's create a fairer, affordable and smarter future of African fashion together.
             </p>
           </div>
         </div>
@@ -80,54 +81,90 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-20 bg-card">
+      <section id="contact-info" className="py-20 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="p-6 space-y-4 text-center hover:shadow-lg transition-shadow">
-              <div className="flex justify-center">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* General Enquiry and Partnership */}
+            <Card className="p-8 space-y-4 hover:shadow-lg transition-shadow">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
-              </div>
-              <div className="space-y-2">
-                <h3 className="font-serif text-lg font-bold text-foreground">Location</h3>
-                <p className="text-sm text-muted-foreground">Lira, Northern Uganda</p>
+                <div className="space-y-3">
+                  <h3 className="font-serif text-xl font-bold text-foreground">
+                    Address/Contact for general enquiry and partnership
+                  </h3>
+                  <div className="space-y-2 text-sm text-foreground">
+                    <p>Lira Industrial Zone, Lira City, Uganda</p>
+                    <p>P.o. Box 331834 Lira, Uganda</p>
+                    <div className="pt-2 space-y-1">
+                      <p className="flex items-center gap-2">
+                        <Phone className="h-4 w-4 text-primary" />
+                        <a href="tel:+256774672629" className="hover:text-primary transition-colors">
+                          +256 774 672 629
+                        </a>
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <Mail className="h-4 w-4 text-primary" />
+                        <a href="mailto:info@zeroetextile.co.ug" className="hover:text-primary transition-colors">
+                          info@zeroetextile.co.ug
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </Card>
 
-            <Card className="p-6 space-y-4 text-center hover:shadow-lg transition-shadow">
-              <div className="flex justify-center">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+            {/* Business Deals */}
+            <Card className="p-8 space-y-4 hover:shadow-lg transition-shadow">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <Phone className="h-6 w-6 text-primary" />
                 </div>
-              </div>
-              <div className="space-y-2">
-                <h3 className="font-serif text-lg font-bold text-foreground">Phone</h3>
-                <p className="text-sm text-muted-foreground">+256 XXX XXX XXX</p>
+                <div className="space-y-3">
+                  <h3 className="font-serif text-xl font-bold text-foreground">For Business deals</h3>
+                  <div className="space-y-2 text-sm text-foreground">
+                    <p className="flex items-center gap-2">
+                      <Phone className="h-4 w-4 text-primary" />
+                      <a href="tel:+256700865980" className="hover:text-primary transition-colors">
+                        +256 700 865 980
+                      </a>
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <Mail className="h-4 w-4 text-primary" />
+                      <a href="mailto:marketing@zeroetextile.co.ug" className="hover:text-primary transition-colors">
+                        marketing@zeroetextile.co.ug
+                      </a>
+                    </p>
+                  </div>
+                </div>
               </div>
             </Card>
 
-            <Card className="p-6 space-y-4 text-center hover:shadow-lg transition-shadow">
-              <div className="flex justify-center">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+            {/* Concerns/Ethical Issues */}
+            <Card className="p-8 space-y-4 hover:shadow-lg transition-shadow">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
-              </div>
-              <div className="space-y-2">
-                <h3 className="font-serif text-lg font-bold text-foreground">Email</h3>
-                <p className="text-sm text-muted-foreground">info@zeroetextile.com</p>
-              </div>
-            </Card>
-
-            <Card className="p-6 space-y-4 text-center hover:shadow-lg transition-shadow">
-              <div className="flex justify-center">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Clock className="h-6 w-6 text-primary" />
+                <div className="space-y-3">
+                  <h3 className="font-serif text-xl font-bold text-foreground">For Concerns/Ethical Issues</h3>
+                  <div className="space-y-2 text-sm text-foreground">
+                    <p className="flex items-center gap-2">
+                      <Phone className="h-4 w-4 text-primary" />
+                      <a href="tel:+256760515730" className="hover:text-primary transition-colors">
+                        +256 760 515 730
+                      </a>
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <Mail className="h-4 w-4 text-primary" />
+                      <a href="mailto:ethics@zeroetextile.co.ug" className="hover:text-primary transition-colors">
+                        ethics@zeroetextile.co.ug
+                      </a>
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="space-y-2">
-                <h3 className="font-serif text-lg font-bold text-foreground">Business Hours</h3>
-                <p className="text-sm text-muted-foreground">Mon-Fri: 8AM-6PM</p>
               </div>
             </Card>
           </div>

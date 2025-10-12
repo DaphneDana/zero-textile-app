@@ -99,7 +99,7 @@ export default function OpportunitiesPage() {
                   <Lightbulb className="h-8 w-8 text-primary" />
                 </div>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-orange-500">Business Startups</h2>
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">Business Startups</h2>
               <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
             </div>
 
@@ -111,7 +111,7 @@ export default function OpportunitiesPage() {
 
               <div className="space-y-8 relative z-10">
                 <div className="text-center space-y-4">
-                  <h3 className="font-serif text-2xl font-bold text-orange-500">
+                  <h3 className="font-serif text-2xl font-bold text-foreground">
                     We'd Love To Help You Start Your Cloth business!
                   </h3>
                   <p className="text-lg text-foreground leading-relaxed">
@@ -234,7 +234,7 @@ export default function OpportunitiesPage() {
                   <Handshake className="h-8 w-8 text-primary" />
                 </div>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-orange-500">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
                 Collaboration & Partnership
               </h2>
               <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
