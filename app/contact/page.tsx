@@ -44,7 +44,7 @@ export default function ContactPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -71,6 +71,9 @@ export default function ContactPage() {
             <p className="text-xl md:text-2xl text-white/90 text-pretty drop-shadow-lg animate-fade-in-up animation-delay-200">
               Thanks for exploring our website. For more insights or desire to collaborate with us, feel free to reach
               out. Let's create a fairer, affordable and smarter future of African fashion together.
+            </p>
+            <p className="text-xl md:text-2xl text-white/90 text-pretty drop-shadow-lg animate-fade-in-up animation-delay-300">
+              Africa doesn't need competition, Africa needs collaboration and Partnership for great impact.
             </p>
           </div>
         </div>
