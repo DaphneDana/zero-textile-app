@@ -11,7 +11,7 @@ export default function AboutPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -78,13 +78,6 @@ export default function AboutPage() {
                   Sudan.
                 </p>
                 <p className="text-lg text-foreground leading-relaxed">
-                  We are driven by the motivation to unlock economic opportunity for women and youth through sustainable
-                  production of female clothes using modern technology to increase product quality, give more value to our
-                  consumers and empower the local communities. With an increased demand for organic cotton garments
-                  globally, we are ready to contribute to meeting the demands and create upto 1,500 job opportunities for
-                  local women of Uganda.
-                </p>
-                <p className="text-lg text-foreground leading-relaxed">
                   Our Success reflect our commitment to offer to the market high quality services and products manufactured
                   by Ugandan women for women of Africa and beyond. We specialize in producing female garments in over
                   5,000 different styles and wholesaling stock clothing to customers within and outside Uganda. We also
@@ -97,20 +90,20 @@ export default function AboutPage() {
               {/* Quick Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
                 <div className="bg-primary/70 p-4 rounded-lg border-l-4 border-primary">
-                  <div className="text-2xl font-bold text-white">80%</div>
+                  <div className="text-2xl font-bold text-white">80%(1,500)</div>
                   <div className="text-sm text-white/90">Female Workforce</div>
                 </div>
                 <div className="bg-primary/70 p-4 rounded-lg border-l-4 border-primary">
                   <div className="text-2xl font-bold text-white">54,027</div>
-                  <div className="text-sm text-white/90">Pieces Produced</div>
+                  <div className="text-sm text-white/90">Monthly Production</div>
                 </div>
                 <div className="bg-primary/70 p-4 rounded-lg border-l-4 border-primary">
                   <div className="text-2xl font-bold text-white">5,000+</div>
                   <div className="text-sm text-white/90">Business Partners</div>
                 </div>
                 <div className="bg-primary/70 p-4 rounded-lg border-l-4 border-primary">
-                  <div className="text-2xl font-bold text-white">2024</div>
-                  <div className="text-sm text-white/90">Year Founded</div>
+                  <div className="text-2xl font-bold text-white">130</div>
+                  <div className="text-sm text-white/90">AI Assisted Industrial Machines</div>
                 </div>
               </div>
             </div>
@@ -198,7 +191,7 @@ export default function AboutPage() {
             <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-primary/5 px-8 py-4 rounded-full border-2 border-primary/20 hover:border-primary/40 transition-colors shadow-lg">
               <Heart className="h-6 w-6 text-primary" />
               <span className="font-serif text-xl font-semibold text-primary">
-                Mitumba, Second-Hand Clothes Problem Solved
+                Our Motto: Mitumba-Second Hand Clothes' Problem Solved
               </span>
             </div>
           </div>
@@ -363,7 +356,7 @@ export default function AboutPage() {
 
                   <div className="space-y-3 text-sm text-foreground leading-relaxed">
                     <p>
-                      Daniel's drive to create tangible impact through business led him to co-found ZTC with Daphine in 2025.
+                      Daniel's drive to create tangible impact through business led him to co-found ZTC with Daphine in 2024.
                       As a trained financial management consultant with over 15 years of experience in financial and general
                       management , Daniel focuses on process optimization, cost reduction, organizational structuring, general
                       operation and growth strategy.
