@@ -143,14 +143,14 @@ export function AboutPreviewSection() {
                 <StatCard
                   icon={Users}
                   value="80"
-                  suffix="%"
+                  suffix="%(1,500)"
                   label="Female Workforce"
                   shouldAnimate={isVisible}
                 />
                 <StatCard
                   icon={Package}
                   value={54027}
-                  label="Pieces Produced"
+                  label="Monthly Production"
                   shouldAnimate={isVisible}
                 />
                 <StatCard
@@ -162,8 +162,8 @@ export function AboutPreviewSection() {
                 />
                 <StatCard
                   icon={Award}
-                  value={2025}
-                  label="Registered"
+                  value={130}
+                  label="AI Assisted Industrial Machines"
                   shouldAnimate={isVisible}
                 />
               </div>
