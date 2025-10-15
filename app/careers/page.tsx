@@ -86,7 +86,7 @@ export default function CareersPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -289,8 +289,61 @@ export default function CareersPage() {
         </div>
       </section>
 
+      {/* Tailoring Skills Showcase */}
+      <section className="py-20 bg-background relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-[0.02] text-primary pointer-events-none">
+          <AfricanGeometricPattern />
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Image */}
+              <div className="order-2 lg:order-1">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                  <img
+                    src="/images/tailor.jpg"
+                    alt="Professional tailoring at Zeroe Textile"
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+
+                  {/* Corner Decorations */}
+                  <div className="absolute top-0 left-0 w-20 h-20 border-t-4 border-l-4 border-primary/70" />
+                  <div className="absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-primary/70" />
+                </div>
+              </div>
+
+              {/* Text Content */}
+              <div className="order-1 lg:order-2 space-y-6">
+                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
+                  Learn From Industry Experts
+                </h2>
+                <div className="w-24 h-1 bg-primary rounded-full" />
+                <div className="space-y-4">
+                  <p className="text-lg text-foreground leading-relaxed">
+                    Our internship and training programs provide hands-on experience with professional equipment and
+                    guidance from skilled artisans with years of experience in the textile industry.
+                  </p>
+                  <p className="text-lg text-foreground leading-relaxed">
+                    Whether you're interested in tailoring, embroidery, or T-shirt printing, you'll gain practical
+                    skills that prepare you for a successful career in fashion manufacturing.
+                  </p>
+                  <p className="text-lg text-foreground leading-relaxed">
+                    Join us and become part of a team that's transforming Uganda's textile industry while empowering
+                    the next generation of fashion professionals.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Job Applications Section */}
-      <section id="job-applications" className="py-20 bg-background relative overflow-hidden">
+      <section id="job-applications" className="py-20 bg-card relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.02] text-primary pointer-events-none">
           <TribalPattern />
@@ -364,7 +417,7 @@ export default function CareersPage() {
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold">Ready to Join Our Journey?</h2>
             <p className="text-lg md:text-xl opacity-90">
-              Whether you're looking to start a business, gain experience, or partner with us, we're here to support
+              Whether you're looking to start a business, gain experience, or partner with us, we're here to work with
               you.
             </p>
             <Button
