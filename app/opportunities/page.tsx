@@ -49,7 +49,7 @@ export default function OpportunitiesPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -219,8 +219,61 @@ export default function OpportunitiesPage() {
         </div>
       </section>
 
+      {/* Why Partner With Us - Visual Section */}
+      <section className="py-20 bg-card relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-[0.02] text-primary pointer-events-none">
+          <TribalPattern />
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Text Content */}
+              <div className="space-y-6">
+                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
+                  Why Partner With Zeroe Textile?
+                </h2>
+                <div className="w-24 h-1 bg-primary rounded-full" />
+                <div className="space-y-4">
+                  <p className="text-lg text-foreground leading-relaxed">
+                    As Uganda's largest professional female-based clothing manufacturer, we offer unmatched expertise
+                    in sustainable fashion production with a proven track record of success.
+                  </p>
+                  <p className="text-lg text-foreground leading-relaxed">
+                    Our state-of-the-art facility, skilled workforce of over 80% women, and commitment to quality
+                    make us the ideal partner for entrepreneurs looking to start their clothing business or
+                    organizations seeking collaboration.
+                  </p>
+                  <p className="text-lg text-foreground leading-relaxed">
+                    Together, we can create jobs, empower communities, and build a sustainable future for African fashion.
+                  </p>
+                </div>
+              </div>
+
+              {/* Image */}
+              <div>
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                  <img
+                    src="/images/tailor1.jpg"
+                    alt="Manufacturing excellence at Zeroe Textile"
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+
+                  {/* Corner Decorations */}
+                  <div className="absolute top-0 left-0 w-20 h-20 border-t-4 border-l-4 border-primary/70" />
+                  <div className="absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-primary/70" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Collaboration and Partnership Section */}
-      <section id="partnership" className="py-20 bg-card relative overflow-hidden">
+      <section id="partnership" className="py-20 bg-background relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.02] text-primary pointer-events-none">
           <KentePattern />
