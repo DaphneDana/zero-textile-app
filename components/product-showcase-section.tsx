@@ -7,7 +7,7 @@ const products = [
   {
     title: "Office Wear",
     description: "Skirts, blouses, and suits for working women",
-    image: "/images/lady4.jpg",
+    image: "/images/office.jpg",
   },
   {
     title: "Casual Everyday Wear",
@@ -22,7 +22,7 @@ const products = [
   {
     title: "Traditional Wear",
     description: "Kitenge or gomesi-inspired trendy outfits",
-    image: "/images/skirt.jpg",
+    image: "/images/culture.jpg",
   },
 ]
 
