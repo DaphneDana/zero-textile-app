@@ -150,6 +150,7 @@ export function Footer() {
 
           {/* Copyright */}
           <div className="mt-6 text-center text-sm text-muted-foreground">
+            <p>P.O. Box 331834 Lira, Uganda</p>
             <p>&copy; {new Date().getFullYear()} Zeroe Textile Co. Ltd. All rights reserved.</p>
           </div>
         </div>
