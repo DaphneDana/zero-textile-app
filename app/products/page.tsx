@@ -16,47 +16,47 @@ import Autoplay from "embla-carousel-autoplay"
 const clothingProducts = [
   {
     name: "Body Suits",
-    images: ["/images/lady.jpg", "/images/lady1.jpg", "/images/lady3.jpg"]
+    images: ["/images/body-suit.jpg", "/images/body-suit1.webp", "/images/body-suit3.jpg"]
   },
   {
     name: "Blouses",
-    images: ["/images/lady4.jpg", "/images/skirt.jpg", "/images/lady.jpg"]
+    images: ["/images/blouse.jpg", "/images/blouse1.webp", "/images/blouse2.webp"]
   },
   {
     name: "Dresses",
-    images: ["/images/lady1.jpg", "/images/lady3.jpg", "/images/lady4.jpg"]
+    images: ["/images/dress1.png", "/images/dress2.jpeg", "/images/dress3.jpg"]
   },
   {
     name: "Skirts",
-    images: ["/images/skirt.jpg", "/images/lady.jpg", "/images/lady1.jpg"]
+    images: ["/images/skirt.jpg", "/images/lady.jpg", "/images/skirt1.webp"]
   },
   {
     name: "Knickers",
-    images: ["/images/lady3.jpg", "/images/lady4.jpg"]
+    images: ["/images/knickers1.webp", "/images/knickers2.webp", "/images/knickers3.webp"]
   },
   {
     name: "Long Shirts",
-    images: ["/images/lady.jpg", "/images/lady1.jpg"]
+    images: ["/images/shirtt.jpg", "/images/shirt1.webp", "/images/shirrtt1.png"]
   },
   {
     name: "Trousers",
-    images: ["/images/lady4.jpg", "/images/skirt.jpg"]
+    images: ["/images/pants3.jpg", "/images/pants1.webp", "/images/pants2.webp"]
   },
   {
     name: "Shorts",
-    images: ["/images/lady3.jpg", "/images/lady.jpg"]
+    images: ["/images/shorts2.jpg", "/images/shorts.jpg", "/images/shorts1.png"]
   },
   {
     name: "Lounge Wear",
-    images: ["/images/lady1.jpg", "/images/lady4.jpg"]
+    images: ["/images/lady1.jpg", "/images/lady4.jpg", "/images/lady3.jpg"]
   },
   {
     name: "T-shirts",
-    images: ["/images/skirt.jpg", "/images/lady3.jpg"]
+    images: ["/images/shirt3.jpg", "/images/shirt2.jpg", "/images/shirt1.jpg"]
   },
   {
     name: "Pyjamas",
-    images: ["/images/lady.jpg", "/images/lady1.jpg"]
+    images: ["/images/pyjamas.png", "/images/pyjamas1.png", "/images/pyjamsa.jpg"]
   },
 ]
 
@@ -256,7 +256,7 @@ export default function ProductsPage() {
                           {product.images.map((image, imgIndex) => (
                             <div
                               key={imgIndex}
-                              className="relative aspect-square overflow-hidden rounded-lg group/img cursor-pointer"
+                              className="relative aspect-square overflow-hidden rounded-lg border-4 border-primary/20 group/img cursor-pointer hover:border-primary transition-all shadow-md hover:shadow-xl"
                             >
                               <img
                                 src={image}
@@ -308,13 +308,186 @@ export default function ProductsPage() {
             {/* Special Orders */}
             <Card className="p-8 space-y-6 bg-accent/30">
               <h3 className="font-serif text-2xl font-bold text-foreground text-center">Special Orders</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {specialOrders.map((order, index) => (
-                  <div key={index} className="flex items-center gap-3 p-4 bg-card rounded-lg">
-                    <div className="w-2 h-2 rounded-full bg-primary" />
-                    <p className="text-foreground">{order}</p>
-                  </div>
-                ))}
+              <div className="space-y-4">
+                {/* School Uniforms */}
+                <Card className="overflow-hidden border-2 border-transparent hover:border-primary/20 transition-all">
+                  <button
+                    onClick={() => toggleProduct("School uniforms")}
+                    className="w-full p-6 flex items-center justify-between text-left hover:bg-accent/50 transition-colors group"
+                  >
+                    <span className="font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
+                      School uniforms
+                    </span>
+                    <ChevronDown
+                      className={`h-5 w-5 text-primary transition-transform duration-300 ${
+                        expandedProduct === "School uniforms" ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {expandedProduct === "School uniforms" && (
+                    <div className="px-6 pb-6 pt-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="relative aspect-square overflow-hidden rounded-lg group/img cursor-pointer">
+                          <img
+                            src="/images/Uniform2021.jpg"
+                            alt="School uniform 1"
+                            className="w-full h-full object-cover group-hover/img:scale-110 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity" />
+                          <div className="absolute inset-0 opacity-0 group-hover/img:opacity-10 text-white pointer-events-none transition-opacity">
+                            <KentePattern />
+                          </div>
+                        </div>
+                        <div className="relative aspect-square overflow-hidden rounded-lg group/img cursor-pointer">
+                          <img
+                            src="/images/uniform.png"
+                            alt="School uniform 2"
+                            className="w-full h-full object-cover group-hover/img:scale-110 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity" />
+                          <div className="absolute inset-0 opacity-0 group-hover/img:opacity-10 text-white pointer-events-none transition-opacity">
+                            <KentePattern />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </Card>
+
+                {/* Medical Uniforms */}
+                <Card className="overflow-hidden border-2 border-transparent hover:border-primary/20 transition-all">
+                  <button
+                    onClick={() => toggleProduct("Medical uniforms")}
+                    className="w-full p-6 flex items-center justify-between text-left hover:bg-accent/50 transition-colors group"
+                  >
+                    <span className="font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
+                      Medical uniforms
+                    </span>
+                    <ChevronDown
+                      className={`h-5 w-5 text-primary transition-transform duration-300 ${
+                        expandedProduct === "Medical uniforms" ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {expandedProduct === "Medical uniforms" && (
+                    <div className="px-6 pb-6 pt-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="relative aspect-square overflow-hidden rounded-lg group/img cursor-pointer">
+                          <img
+                            src="/images/doctor.jpg"
+                            alt="Medical uniform 1"
+                            className="w-full h-full object-cover group-hover/img:scale-110 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity" />
+                          <div className="absolute inset-0 opacity-0 group-hover/img:opacity-10 text-white pointer-events-none transition-opacity">
+                            <KentePattern />
+                          </div>
+                        </div>
+                        <div className="relative aspect-square overflow-hidden rounded-lg group/img cursor-pointer">
+                          <img
+                            src="/images/male-doctor.jpg"
+                            alt="Medical uniform 2"
+                            className="w-full h-full object-cover group-hover/img:scale-110 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity" />
+                          <div className="absolute inset-0 opacity-0 group-hover/img:opacity-10 text-white pointer-events-none transition-opacity">
+                            <KentePattern />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </Card>
+
+                {/* Engineering and Technical Work Uniforms */}
+                <Card className="overflow-hidden border-2 border-transparent hover:border-primary/20 transition-all">
+                  <button
+                    onClick={() => toggleProduct("Engineering and technical work uniforms")}
+                    className="w-full p-6 flex items-center justify-between text-left hover:bg-accent/50 transition-colors group"
+                  >
+                    <span className="font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
+                      Engineering and technical work uniforms
+                    </span>
+                    <ChevronDown
+                      className={`h-5 w-5 text-primary transition-transform duration-300 ${
+                        expandedProduct === "Engineering and technical work uniforms" ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {expandedProduct === "Engineering and technical work uniforms" && (
+                    <div className="px-6 pb-6 pt-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="relative aspect-square overflow-hidden rounded-lg group/img cursor-pointer">
+                          <img
+                            src="/images/work.jpg"
+                            alt="Engineering uniform 1"
+                            className="w-full h-full object-cover group-hover/img:scale-110 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity" />
+                          <div className="absolute inset-0 opacity-0 group-hover/img:opacity-10 text-white pointer-events-none transition-opacity">
+                            <KentePattern />
+                          </div>
+                        </div>
+                        <div className="relative aspect-square overflow-hidden rounded-lg group/img cursor-pointer">
+                          <img
+                            src="/images/work1.jpg"
+                            alt="Engineering uniform 2"
+                            className="w-full h-full object-cover group-hover/img:scale-110 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity" />
+                          <div className="absolute inset-0 opacity-0 group-hover/img:opacity-10 text-white pointer-events-none transition-opacity">
+                            <KentePattern />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </Card>
+
+                {/* Private Security Uniforms */}
+                <Card className="overflow-hidden border-2 border-transparent hover:border-primary/20 transition-all">
+                  <button
+                    onClick={() => toggleProduct("Private security uniforms")}
+                    className="w-full p-6 flex items-center justify-between text-left hover:bg-accent/50 transition-colors group"
+                  >
+                    <span className="font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
+                      Private security uniforms
+                    </span>
+                    <ChevronDown
+                      className={`h-5 w-5 text-primary transition-transform duration-300 ${
+                        expandedProduct === "Private security uniforms" ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {expandedProduct === "Private security uniforms" && (
+                    <div className="px-6 pb-6 pt-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="relative aspect-square overflow-hidden rounded-lg group/img cursor-pointer">
+                          <img
+                            src="/images/security.jpg"
+                            alt="Security uniform 1"
+                            className="w-full h-full object-cover group-hover/img:scale-110 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity" />
+                          <div className="absolute inset-0 opacity-0 group-hover/img:opacity-10 text-white pointer-events-none transition-opacity">
+                            <KentePattern />
+                          </div>
+                        </div>
+                        <div className="relative aspect-square overflow-hidden rounded-lg group/img cursor-pointer">
+                          <img
+                            src="/images/security1.jpg"
+                            alt="Security uniform 2"
+                            className="w-full h-full object-cover group-hover/img:scale-110 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity" />
+                          <div className="absolute inset-0 opacity-0 group-hover/img:opacity-10 text-white pointer-events-none transition-opacity">
+                            <KentePattern />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </Card>
               </div>
             </Card>
 
@@ -359,7 +532,7 @@ export default function ProductsPage() {
                 {/* Right - Image */}
                 <div className="relative aspect-square rounded-lg overflow-hidden group">
                   <img
-                    src="/modern-african-traditional-kitenge-fashion-colorfu.jpg"
+                    src="/images/shirts.png"
                     alt="Printed T-shirt sample"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
@@ -496,7 +669,7 @@ export default function ProductsPage() {
               <Card className="overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary/20 bg-gradient-to-br from-card to-card/50">
                 <div className="relative h-64 overflow-hidden group">
                   <img
-                    src="/professional-african-woman-office-wear-elegant-sui.jpg"
+                    src="/images/needlework.png"
                     alt="Needlework embroidery"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
