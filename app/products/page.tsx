@@ -15,8 +15,8 @@ import Autoplay from "embla-carousel-autoplay"
 
 const clothingProducts = [
   {
-    name: "Body Suits",
-    images: ["/images/body-suit.jpg", "/images/body-suit1.webp", "/images/body-suit3.jpg"]
+    name: "Suits",
+    images: ["/images/body-suit.jpg", "/images/body-suit1.jpg", "/images/body-suit3.jpg"]
   },
   {
     name: "Blouses",
@@ -36,15 +36,15 @@ const clothingProducts = [
   },
   {
     name: "Long Shirts",
-    images: ["/images/shirtt.jpg", "/images/shirt1.webp", "/images/shirrtt1.png"]
+    images: ["/images/shirtt.jpg", "/images/shirt.jpg", "/images/shirrtt1.jpg"]
   },
   {
     name: "Trousers",
-    images: ["/images/pants3.jpg", "/images/pants1.webp", "/images/pants2.webp"]
+    images: ["/images/pants2.jpg", "/images/pants1.jpg", "/images/pants.jpg"]
   },
   {
     name: "Shorts",
-    images: ["/images/shorts2.jpg", "/images/shorts.jpg", "/images/shorts1.png"]
+    images: ["/images/shorts2.jpg", "/images/shorts.jpg", "/images/shorts1.jpg"]
   },
   {
     name: "Lounge Wear",
@@ -52,11 +52,11 @@ const clothingProducts = [
   },
   {
     name: "T-shirts",
-    images: ["/images/shirt3.jpg", "/images/shirt2.jpg", "/images/shirt1.jpg"]
+    images: ["/images/t-shirt.jpg", "/images/t-shirt1.jpg", "/images/t-shirt2.jpg"]
   },
   {
     name: "Pyjamas",
-    images: ["/images/pyjamas.png", "/images/pyjamas1.png", "/images/pyjamsa.jpg"]
+    images: ["/images/pyjamas.jpg", "/images/pyjamas1.jpg", "/images/pyjamsa.jpg"]
   },
 ]
 
@@ -385,7 +385,7 @@ export default function ProductsPage() {
                         </div>
                         <div className="relative aspect-square overflow-hidden rounded-lg group/img cursor-pointer">
                           <img
-                            src="/images/male-doctor.jpg"
+                            src="/images/srub.jpg"
                             alt="Medical uniform 2"
                             className="w-full h-full object-cover group-hover/img:scale-110 transition-transform duration-500"
                           />
@@ -532,7 +532,7 @@ export default function ProductsPage() {
                 {/* Right - Image */}
                 <div className="relative aspect-square rounded-lg overflow-hidden group">
                   <img
-                    src="/images/shirts.png"
+                    src="/images/talking-tshirts.png"
                     alt="Printed T-shirt sample"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
