@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(del \"C:\\Users\\hp\\Desktop\\side\\zero-textile-app\\app\\sitemap.ts\")",
+      "Bash(del \"C:\\Users\\hp\\Desktop\\side\\zero-textile-app\\app\\robots.ts\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

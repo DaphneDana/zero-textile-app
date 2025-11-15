@@ -138,9 +138,9 @@ export default function ProductsPage() {
                 </p>
 
                 <div className="space-y-4">
-                  <h3 className="font-serif text-2xl font-bold text-foreground text-center">
+                  <h2 className="font-serif text-2xl font-bold text-foreground text-center">
                     Our clothes are categorized into:
-                  </h3>
+                  </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="flex items-start gap-3 p-4 bg-accent/30 rounded-lg">
                       <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">

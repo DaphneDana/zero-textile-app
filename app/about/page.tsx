@@ -1,9 +1,24 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { WhatsAppWidget } from "@/components/whatsapp-widget"
 import { Card } from "@/components/ui/card"
 import { Target, Eye, Focus, Heart, Scissors, ShoppingBag, Recycle, Store, FileCheck, Package, MessageCircle, Shirt, Ruler, Layers, Camera, CheckCircle, Factory, Truck } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { KentePattern, AfricanGeometricPattern, TribalPattern } from "@/components/african-patterns"
+
+export const metadata: Metadata = {
+  title: "About Us | Zeroe Textile Co. Ltd - Uganda's Leading Female-Based Fashion Manufacturer",
+  description: "Learn about Zeroe Textile Co. Ltd, our mission to empower women through sustainable fashion manufacturing, our founders, and our commitment to quality African apparel production in Lira, Uganda.",
+  openGraph: {
+    title: "About Us | Zeroe Textile Co. Ltd",
+    description: "Empowering women through sustainable fashion manufacturing in Uganda. Meet our founders and learn about our mission.",
+    url: "https://zeroetextile.co.ug/about",
+    images: ["/professional-african-woman-office-wear-elegant-sui.jpg"],
+  },
+  alternates: {
+    canonical: "https://zeroetextile.co.ug/about",
+  },
+}
 
 export default function AboutPage() {
   return (

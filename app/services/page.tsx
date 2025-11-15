@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { WhatsAppWidget } from "@/components/whatsapp-widget"
 import { Card } from "@/components/ui/card"
@@ -6,6 +7,20 @@ import { MessageCircle, Search, Tag, Package, Truck } from "lucide-react"
 import Link from "next/link"
 import { Footer } from "@/components/footer"
 import { KentePattern, AfricanGeometricPattern, TribalPattern } from "@/components/african-patterns"
+
+export const metadata: Metadata = {
+  title: "Our Services | Zeroe Textile Co. Ltd - Fashion Manufacturing Support Services",
+  description: "Free consultation, fabric sourcing, custom labels & tags, packaging, and delivery services. End-to-end support for your fashion business in Uganda and beyond.",
+  openGraph: {
+    title: "Our Services | Zeroe Textile Co. Ltd",
+    description: "Free consultation, sourcing, labels, packaging, and delivery. End-to-end fashion manufacturing support.",
+    url: "https://zeroetextile.co.ug/services",
+    images: ["/professional-african-woman-office-wear-elegant-sui.jpg"],
+  },
+  alternates: {
+    canonical: "https://zeroetextile.co.ug/services",
+  },
+}
 
 const services = [
   {
@@ -122,7 +137,7 @@ export default function ServicesPage() {
                       </div>
                     </div>
                     <div className="flex-1 space-y-4">
-                      <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground">{service.title}</h3>
+                      <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground">{service.title}</h2>
                       <p className="text-lg text-foreground leading-relaxed">{service.description}</p>
                       {service.cta && (
                         <div className="pt-2">

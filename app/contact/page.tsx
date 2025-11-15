@@ -94,9 +94,9 @@ export default function ContactPage() {
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div className="space-y-3">
-                  <h3 className="font-serif text-xl font-bold text-foreground">
+                  <h2 className="font-serif text-xl font-bold text-foreground">
                     Address/Contact for general enquiry and partnership
-                  </h3>
+                  </h2>
                   <div className="space-y-2 text-sm text-foreground">
                     <p>Lira Industrial Zone, Lira City, Uganda</p>
                     <p>P.o. Box 331834 Lira, Uganda</p>
@@ -126,7 +126,7 @@ export default function ContactPage() {
                   <Phone className="h-6 w-6 text-primary" />
                 </div>
                 <div className="space-y-3">
-                  <h3 className="font-serif text-xl font-bold text-foreground">For Business deals</h3>
+                  <h2 className="font-serif text-xl font-bold text-foreground">For Business deals</h2>
                   <div className="space-y-2 text-sm text-foreground">
                     <p className="flex items-center gap-2">
                       <Phone className="h-4 w-4 text-primary" />
@@ -152,7 +152,7 @@ export default function ContactPage() {
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div className="space-y-3">
-                  <h3 className="font-serif text-xl font-bold text-foreground">For Concerns/Ethical Issues</h3>
+                  <h2 className="font-serif text-xl font-bold text-foreground">For Concerns/Ethical Issues</h2>
                   <div className="space-y-2 text-sm text-foreground">
                     <p className="flex items-center gap-2">
                       <Phone className="h-4 w-4 text-primary" />
