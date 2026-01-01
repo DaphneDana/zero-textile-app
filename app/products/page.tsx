@@ -13,6 +13,7 @@ import { KentePattern, AfricanGeometricPattern, TribalPattern } from "@/componen
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
 
+
 const clothingProducts = [
   {
     name: "Suits",
@@ -81,7 +82,7 @@ export default function ProductsPage() {
     <main className="min-h-screen">
       <Navigation />
 
-      {/* Hero Section */}
+      {/* Hero Section for the Products Page */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div
