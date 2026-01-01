@@ -187,6 +187,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      {/* WhatsApp Widget & Footer */}
 
       <WhatsAppWidget />
       <Footer />
