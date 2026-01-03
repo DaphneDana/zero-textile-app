@@ -1,3 +1,4 @@
+{/* app/about/page.tsx */}
 import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { WhatsAppWidget } from "@/components/whatsapp-widget"
