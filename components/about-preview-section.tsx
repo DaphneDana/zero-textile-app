@@ -1,3 +1,4 @@
+{/* components/about-preview-section.tsx */}
 "use client"
 
 import { useEffect, useRef, useState } from "react"
