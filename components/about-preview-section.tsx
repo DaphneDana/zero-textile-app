@@ -1,6 +1,5 @@
-{/* components/about-preview-section.tsx */}
 "use client"
-
+{/* components/about-preview-section.tsx */}
 import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
