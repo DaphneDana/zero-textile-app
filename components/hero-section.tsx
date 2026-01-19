@@ -1,6 +1,5 @@
-{/* hero section */}
 "use client"
-
+{/* hero section */}
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
