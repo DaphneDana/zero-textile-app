@@ -1,3 +1,4 @@
+{/* Product Page */}
 "use client"
 
 import { useState } from "react"
